@@ -1,0 +1,19 @@
+mixin hero(mods)
+	-
+		const data = {
+			title: "The Brand",
+			titleBottom: "of luxerious",
+			titleColored: "fashion",
+		}
+
+	section.hero
+		.hero__container.container
+			.hero__cols 
+				.hero__col.hero__col--1
+					+picture("content", "hero-bg-img", "png", 800, 765, "Man model in black jacket").hero__pic
+				.hero__col.hero__col--2
+					.hero__heading
+						h1.hero__title.title.title--h1
+							span.hero__title.hero__title--top=data.title
+							span.hero__title.hero__title--bottom=data.titleBottom
+								span.hero__title.hero__title--colored=data.titleColored

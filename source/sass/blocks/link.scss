@@ -1,0 +1,28 @@
+$link_color: $color-default-black;
+
+.link {
+	display: inline-flex;
+	color: $link_color;
+	padding: $gutter;
+	margin: $gutter * -1;
+	position: relative;
+
+	&::after {
+		position: absolute;
+		content: "";
+		width: calc(100% - $gutter * 2);
+		height: 1px;
+		background-color: $link_color;
+		left: $gutter;
+		bottom: $gutter;
+		transform: scale(0);
+		transform-origin: center;
+		transition: $trans-default;
+	}
+
+	@include hover {
+		&::after {
+			transform: scale(1);
+		}
+	}
+}

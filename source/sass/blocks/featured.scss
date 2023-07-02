@@ -1,0 +1,28 @@
+.featured {
+	padding: 60px 0;
+
+	&__heading {
+		text-align: center;
+	}
+
+	&__title {
+		margin-bottom: 6px;
+		color: $color-nero;
+	}
+
+	&__subtitle {
+		color: $color-nobel;
+	}
+
+	&__list {
+		padding: 48px 0;
+		display: grid;
+		grid-gap: 30px;
+		grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+	}
+
+	&__more {
+		display: flex;
+		justify-content: center;
+	}
+}
