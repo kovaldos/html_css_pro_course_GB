@@ -1,0 +1,17 @@
+mixin breadcrumbs(name, secondLevel, thirdLevel, fourthLevel)
+	.breadcrumbs
+		.breadcrumbs__wrapper
+			a.breadcrumbs__link(href="index.html")=name
+			span.breadcrumbs__separator &nbsp;/&nbsp;
+			if(!thirdLevel)
+				span.breadcrumbs__link.breadcrumbs__link--current=secondLevel
+			else 
+				a.breadcrumbs__link(href="#")=secondLevel
+				span.breadcrumbs__separator &nbsp;/&nbsp;
+			if(!fourthLevel)
+				span.breadcrumbs__link.breadcrumbs__link--current=thirdLevel
+			else 
+				a.breadcrumbs__link(href="#")=thirdLevel
+				span.breadcrumbs__separator &nbsp;/&nbsp;
+			if(fourthLevel)
+				span.breadcrumbs__link.breadcrumbs__link--current=fourthLevel

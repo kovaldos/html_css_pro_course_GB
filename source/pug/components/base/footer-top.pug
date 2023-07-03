@@ -1,0 +1,44 @@
+mixin footer-top()
+	-
+		const data = {
+			list: [
+				{
+					icon: {
+						use: "icon-advantages-1",
+						w: 45,
+						h: 32,
+					},
+					title: "Free Delivery",
+					text: "Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.",
+				},
+				{
+					icon: {
+						use: "icon-advantages-2",
+						w: 40,
+						h: 40,
+					},
+					title: "Sales & discounts",
+					text: "Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.",
+				},
+				{
+					icon: {
+						use: "icon-advantages-3",
+						w: 48,
+						h: 35,
+					},
+					title: "Quality assurance",
+					text: "Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.",
+				},
+			]
+		}
+
+	.footer__top.advantages
+		.container
+			ul.advantages__list
+				each item in data.list
+					li.advantages__item
+						span.advantages__icon
+							+icon(item.icon.use, item.icon.w, item.icon.h).icon
+						h2.title.footer__title.advantages__title=item.title
+						p.text.advantages__text=item.text
+

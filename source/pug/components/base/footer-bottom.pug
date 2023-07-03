@@ -1,0 +1,52 @@
+mixin footer-bottom()
+	-
+		const data = {
+			copy: "© 2023 Brand All Rights Reserved.",
+			list: [
+				{
+					href: "https://ru-ru.facebook.com/",
+					icon: {
+						use: "icon-fb",
+						w: 9,
+						h: 15,
+					},
+					classMod: "footer-social__link--fb",
+				},
+				{
+					href: "https://www.instagram.com/",
+					icon: {
+						use: "icon-ig",
+						w: 16,
+						h: 15,
+					},
+					classMod: "footer-social__link--ig",
+				},
+				{
+					href: "https://ru.pinterest.com/",
+					icon: {
+						use: "icon-pinterest",
+						w: 13,
+						h: 16,
+					},
+					classMod: "footer-social__link--pint",
+				},
+				{
+					href: "https://twitter.com/",
+					icon: {
+						use: "icon-twitter",
+						w: 17,
+						h: 14,
+					},
+					classMod: "footer-social__link--twit",
+				},
+			]
+		}
+	.footer__bottom.footer-bottom
+		.container
+			.footer-bottom__row
+				.footer__copy=data.copy
+				ul.footer__social.footer-social
+					each item in data.list
+						li.footer-social__item
+							a.footer-social__link(href=item.href target="_blank" rel="nofollow noopener noreferrer")
+								+icon(item.icon.use, item.icon.w, item.icon.h).icon

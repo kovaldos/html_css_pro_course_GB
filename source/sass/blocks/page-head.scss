@@ -1,0 +1,12 @@
+.page-head {
+	min-height: $page_head_height;
+	display: flex;
+	background-color: $color-lavender-blush;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 32px;
+	}
+}

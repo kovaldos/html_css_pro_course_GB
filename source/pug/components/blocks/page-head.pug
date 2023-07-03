@@ -1,0 +1,47 @@
+mixin page-head(mods)
+	-
+		const data = {
+			productPage: {
+				title: "New Arrivals",
+				breadcrumbs: [
+					{
+						href: "index.html",
+						text: "Home"
+					},
+					{
+						href: "/catalog/women.html",
+						text: "women",
+					},
+					{
+						href: "/catalog/new-arrivals",
+						text: "new-arrivals",
+					},
+				],
+			},
+			catalogPage: {
+				title: "Catalog",
+				breadcrumbs: [
+					{
+						href: "index.html",
+						text: "Home"
+					},
+					{
+						href: "/catalog/men.html",
+						text: "men",
+					},
+					{
+						href: "/catalog/new-arrivals",
+						text: "new-arrivals",
+					},
+				],
+			}
+		}
+
+	.page-head 
+		.container.page-head__container
+			if mods === "product-page"
+				h1.title.title--h1.page-head__title=data.productPage.title
+				+breadcrumbs("home", "women", "new-arrivals")
+
+			else if mods === "catalog-page"
+				h1.title.title--h1.page-head__title=data.catalogPage.title

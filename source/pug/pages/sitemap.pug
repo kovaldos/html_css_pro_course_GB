@@ -9,20 +9,24 @@ block main
 
   -
     const pages = [
-      {
-        name: "UI-kit — ui-kit.html",
-        src: "ui-kit.html"
-      },
+      //- {
+      //-   name: "UI-kit — ui-kit.html",
+      //-   src: "ui-kit.html"
+      //- },
       {
         name: "Главная — index.html",
         src: "index.html"
+      },
+      {
+        name: "Страница продукта — product-page.html",
+        src: "product-page.html"
       },
     ]
 
   main
     .sitemap
       .container
-        img(src="https://via.placeholder.com/300x150" width="300" alt="Логотип проекта")
+        +picture("content", "logo", "png", 150, 150, "Логотип проекта")
         h1 Список страниц
         ol
           each page in pages

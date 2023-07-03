@@ -16,6 +16,12 @@
   &--primary {
     color: $color-default-white;
     background-color: $color-froly;
+    border-color: $color-froly;
+    
+    @include hover {      
+      background-color: $color-default-white;
+      color: $color-froly;
+    }
   }
   
   &--reset {
@@ -28,8 +34,8 @@
   
   &--empty {
     background-color: $color-transparent;
-    border-color: $color-bittersweet;
-    color: $color-brink-pink;
+    border-color: $color-froly;
+    color: $color-froly;
     padding: 15px 40px;
     font-size: 16px;
     line-height: 19px;

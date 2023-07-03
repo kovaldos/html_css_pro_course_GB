@@ -1,0 +1,15 @@
+mixin product-hero()
+	-
+		const data = {
+			slides: [
+			]
+		}
+
+	.product-hero 
+		.swiper.product-hero__slider
+			.swiper-wrapper 
+				- for(i = 0; i < 6; i++)
+					.swiper-slide 
+						+picture("slides", "product-img-1", "png", 597, 724, "product on model photo").product-hero__pic
+			.swiper-button-prev.product-hero__btn.product-hero__btn--prev
+			.swiper-button-next.product-hero__btn.product-hero__btn--next
