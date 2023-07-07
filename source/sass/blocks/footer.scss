@@ -1,4 +1,6 @@
 .footer {
+  $self: &;
+
   padding: 35px 0 0;
 
   &__top {
@@ -30,6 +32,14 @@
   &__social {
     display: flex;
     gap: 7px;
+  }
+
+  &--product-page {
+    #{$self} {
+      &__top {
+        display: none;
+      }
+    }
   }
 }
 

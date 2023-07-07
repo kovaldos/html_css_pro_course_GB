@@ -2,6 +2,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  gap: $gutter * 3;
   width: auto;
   padding: 15px 36px;
   color: inherit;
@@ -49,6 +50,11 @@
     opacity: 0.5;
   
     pointer-events: none;
+  }
+
+  &__icon {
+    display: inline-flex;
+    color: inherit;
   }
 }
 

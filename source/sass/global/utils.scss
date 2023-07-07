@@ -75,7 +75,7 @@
 .icon {
   fill: currentColor;
   stroke: currentColor;
-  transition: color 0.3s ease, stroke 0.3s ease;
+  transition: color $trans-default, stroke $trans-default;
 }
 
 .bg-img {

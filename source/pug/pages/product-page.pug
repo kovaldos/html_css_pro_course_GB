@@ -6,7 +6,7 @@ block variables
   - const hasHeader = true
   - const headerMods = ""
   - const hasFooter = true
-  - const footerMods = ""
+  - const footerMods = "product-page"
   - const currentUrl = "product-page.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
 
 block main
@@ -14,5 +14,6 @@ block main
     section.product-page
       +page-head("product-page")
       +product-hero()
+      +cards("product-page")
 
 block modals

@@ -1,9 +1,41 @@
+//- mixin btn(options = {})
+//-   - const tag = options.href ? "a" : "button";
+//-   - const href = options.href || false;
+//-   - const text = options.text || "";
+//-   - const type = options.type || tag === "button" ? options.type || "button" : false;
+//-   - const target = options.isExternal ? "_blank" : false;
+//-   - const rel = options.isExternal ? "nofollow noopener noreferrer" : false;
+
+//-   #{tag}.btn(href=href, target=target, rel=rel, type=type)&attributes(attributes)!= text
+
 mixin btn(options = {})
   - const tag = options.href ? "a" : "button";
   - const href = options.href || false;
   - const text = options.text || "";
-  - const type = options.type || tag === "button" ? options.type || "button" : false;
+  - const type = options.type || (tag === "button" ? "button" : false);
   - const target = options.isExternal ? "_blank" : false;
   - const rel = options.isExternal ? "nofollow noopener noreferrer" : false;
+  - const hasIcon = options.icon
+  - const hasText = text.length > 0;
 
-  #{tag}.btn(href=href, target=target, rel=rel, type=type)&attributes(attributes)!= text
+  if hasIcon && hasText
+    - const icon = options.icon;
+    - const width = options.w;
+    - const height = options.h;
+    - const iconAttributes = options.iconAttributes || {};
+
+    #{tag}.btn(href=href, target=target, rel=rel, type=type)&attributes(attributes)
+      span.btn__icon
+        +icon(icon, width, height)&attributes(iconAttributes)
+      |
+      span.btn__text=text
+  else if hasIcon
+    - const icon = options.icon;
+    - const width = options.w;
+    - const height = options.h;
+    - const iconAttributes = options.iconAttributes || {};
+
+    #{tag}.btn(href=href, target=target, rel=rel, type=type)&attributes(attributes)
+      +icon(icon, width, height)&attributes(iconAttributes)
+  else
+    #{tag}.btn(href=href, target=target, rel=rel, type=type)&attributes(attributes)!=text

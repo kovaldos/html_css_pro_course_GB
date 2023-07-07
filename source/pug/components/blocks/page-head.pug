@@ -5,15 +5,15 @@ mixin page-head(mods)
 				title: "New Arrivals",
 				breadcrumbs: [
 					{
-						href: "index.html",
+						link: "index.html",
 						text: "Home"
 					},
 					{
-						href: "/catalog/women.html",
+						link: "/catalog/women",
 						text: "women",
 					},
 					{
-						href: "/catalog/new-arrivals",
+						link: "/catalog/new-arrivals",
 						text: "new-arrivals",
 					},
 				],
@@ -22,15 +22,15 @@ mixin page-head(mods)
 				title: "Catalog",
 				breadcrumbs: [
 					{
-						href: "index.html",
+						link: "index.html",
 						text: "Home"
 					},
 					{
-						href: "/catalog/men.html",
+						link: "/catalog/men",
 						text: "men",
 					},
 					{
-						href: "/catalog/new-arrivals",
+						link: "/catalog/new-arrivals",
 						text: "new-arrivals",
 					},
 				],
@@ -41,7 +41,7 @@ mixin page-head(mods)
 		.container.page-head__container
 			if mods === "product-page"
 				h1.title.title--h1.page-head__title=data.productPage.title
-				+breadcrumbs("home", "women", "new-arrivals")
+				+breadcrumbs(data.productPage.breadcrumbs)
 
 			else if mods === "catalog-page"
 				h1.title.title--h1.page-head__title=data.catalogPage.title
