@@ -26,18 +26,14 @@ mixin page-head(mods)
 						text: "Home"
 					},
 					{
-						link: "/catalog/men",
-						text: "men",
-					},
-					{
-						link: "/catalog/new-arrivals",
-						text: "new-arrivals",
+						link: "/catalog",
+						text: "catalog",
 					},
 				],
 			}
 		}
 
-	.page-head 
+	.page-head(class="page-head--" + mods)
 		.container.page-head__container
 			if mods === "product-page"
 				h1.title.title--h1.page-head__title=data.productPage.title
@@ -45,3 +41,4 @@ mixin page-head(mods)
 
 			else if mods === "catalog-page"
 				h1.title.title--h1.page-head__title=data.catalogPage.title
+				+breadcrumbs(data.catalogPage.breadcrumbs)

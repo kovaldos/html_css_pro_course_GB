@@ -1,0 +1,26 @@
+.pagination {
+	padding: 50px 0;
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+	}
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: $gutter;
+		border: 1px solid $color-whisper;
+		border-radius: 4px;
+		color: $color-silver;
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: $gutter;
+		color: $color-silver;
+		&.active {
+			color: $color-froly;
+		}
+	}
+}
