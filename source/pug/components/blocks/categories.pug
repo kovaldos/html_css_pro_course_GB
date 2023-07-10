@@ -1,0 +1,54 @@
+mixin categories()
+	-
+		const data = {
+			items: [
+				{
+					href: "#",
+					img: "categories-img-1",
+					alt: "Model women",
+					small: "30% Off",
+					span: "for women",
+					width: 360,
+					height: 260,
+				},
+				{
+					href: "#",
+					img: "categories-img-2",
+					alt: "Model men",
+					small: "Hot deal",
+					span: "for men",
+					width: 360,
+					height: 260,
+				},
+				{
+					href: "#",
+					img: "categories-img-3",
+					alt: "Model kid",
+					small: "New arrivals",
+					span: "for kids",
+					width: 360,
+					height: 260,
+				},
+				{
+					href: "#",
+					img: "categories-img-4",
+					alt: "Model women",
+					small: "Luxerious & trendy",
+					span: "Accesories",
+					width: 1140,
+					height: 260,
+				},
+			]
+		}
+
+	.categories
+		.container
+			ul.categories__list
+				each item in data.items
+					li.categories__item
+						a.categories__link(href=item.href)
+							+picture("content", item.img, "jpg", item.width, item.height, item.alt).categories__bg.bg-img
+							.categories__heading
+								h2.categories__title.title.title--h3
+									small=item.small
+									span=item.span

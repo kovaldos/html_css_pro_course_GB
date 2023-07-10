@@ -1,0 +1,12 @@
+mixin breadcrumbs(data)
+	.breadcrumbs
+		.container
+			.breadcrumbs__wrapper
+				each breadcrumb, index in data
+					- const { text, link } = breadcrumb
+					if index !== 0
+						span.breadcrumbs__separator &nbsp;/&nbsp;
+					if index === data.length - 1
+						span.breadcrumbs__link.breadcrumbs__link--current= text
+					else
+						a.breadcrumbs__link(href=link)=text

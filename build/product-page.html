@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>BRAND</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="ProjectName — описание">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container header__container">
+          <div class="header__cols">
+            <div class="header__col header__col--1"><a class="header__logo" href="index.html" aria-label="Переход на главную">
+                <picture>
+                  <source type="image/webp" srcset="img/content/logo.webp, img/content/logo@2x.webp 2x"><img src="img/content/logo.png" srcset="img/content/logo@2x.png 2x" width="44" height="38" alt="Main logo">
+                </picture></a>
+              <!--  ToDo Форма поиска -->
+              <div class="header__search header-search">
+                <button class="header-search__btn btn btn--reset">
+                  <svg class="icon" width="27" height="27" aria-hidden="true">
+                    <use xlink:href="./img/stack.svg#icon-search"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="header__col header__col--2">
+              <ul class="header__btn-list">
+                <li class="header__btn-list-item">
+                  <button class="header__btn btn btn--reset" type="button" aria-label="Переключатель отображения меню" aria-pressed="false" data-burger-btn>
+                    <svg class="icon" width="32" height="23" aria-hidden="true">
+                      <use xlink:href="./img/stack.svg#icon-menu"></use>
+                    </svg>
+                  </button>
+                </li>
+                <li class="header__btn-list-item">
+                  <button class="header__btn btn btn--reset" type="button" aria-label="Кнопка профиля пользователя" aria-pressed="false">
+                    <svg class="icon" width="29" height="29" aria-hidden="true">
+                      <use xlink:href="./img/stack.svg#icon-user"></use>
+                    </svg>
+                  </button>
+                </li>
+                <li class="header__btn-list-item cart-btn-wrap">
+                  <button class="header__btn btn btn--reset" type="button" aria-label="Кнопка перехода в корзину" aria-pressed="false">
+                    <svg class="icon" width="32" height="29" aria-hidden="true">
+                      <use xlink:href="./img/stack.svg#icon-cart"></use>
+                    </svg>
+                  </button><span class="cart-counter">5</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="main-nav">
+            <div class="main-nav__overlay" data-burger-overlay></div>
+            <nav class="main-nav__wrapper" data-burger-body>
+              <button class="btn btn--reset main-nav__close">
+                <svg class="icon" width="12" height="12" aria-hidden="true">
+                  <use xlink:href="./img/stack.svg#icon-close"></use>
+                </svg>
+              </button><span class="main-nav__title">Menu</span>
+              <ul class="main-nav__list">
+                <li class="main-nav__item"><a class="link main-nav__link" href="#">Man</a>
+                  <ul class="main-nav__sublist">
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/accessories">Accessories</a></li>
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/bags">Bags</a></li>
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/denim">Denim</a></li>
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/t-shirts">T-Shirts</a></li>
+                  </ul>
+                </li>
+                <li class="main-nav__item"><a class="link main-nav__link" href="#">Woman</a>
+                  <ul class="main-nav__sublist">
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/accessories">Accessories</a></li>
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/jackets_and_coats">Jackets &amp; Coats</a></li>
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/polos">Polos</a></li>
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/t_shirts">T-Shirts</a></li>
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/shirts">Shirts</a></li>
+                  </ul>
+                </li>
+                <li class="main-nav__item"><a class="link main-nav__link" href="#">Kids</a>
+                  <ul class="main-nav__sublist">
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/accessories">Accessories</a></li>
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/jackets_and_coats">Jackets &amp; Coats</a></li>
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/polos">Polos</a></li>
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/t_shirts">T-Shirts</a></li>
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/shirts">Shirts</a></li>
+                    <li class="main-nav__subitem"> <a class="link main-nav__sublink" href="/catalog/bags">Bags</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section class="product-page">
+          <div class="page-head"> 
+            <div class="container page-head__container">
+              <h1 class="title title--h1 page-head__title">New Arrivals</h1>
+              <div class="breadcrumbs">
+                <div class="container">
+                  <div class="breadcrumbs__wrapper"><a class="breadcrumbs__link" href="index.html">Home</a><span class="breadcrumbs__separator">&nbsp;/&nbsp;</span><a class="breadcrumbs__link" href="/catalog/women">women</a><span class="breadcrumbs__separator">&nbsp;/&nbsp;</span><span class="breadcrumbs__link breadcrumbs__link--current">new-arrivals</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-hero"> 
+            <div class="swiper product-hero__slider">
+              <div class="swiper-wrapper"> 
+                <div class="swiper-slide"> 
+                  <picture class="product-hero__pic">
+                    <source type="image/webp" srcset="img/slides/product-img-1.webp, img/slides/product-img-1@2x.webp 2x"><img src="img/slides/product-img-1.png" srcset="img/slides/product-img-1@2x.png 2x" width="597" height="724" alt="product on model photo">
+                  </picture>
+                </div>
+                <div class="swiper-slide"> 
+                  <picture class="product-hero__pic">
+                    <source type="image/webp" srcset="img/slides/product-img-1.webp, img/slides/product-img-1@2x.webp 2x"><img src="img/slides/product-img-1.png" srcset="img/slides/product-img-1@2x.png 2x" width="597" height="724" alt="product on model photo">
+                  </picture>
+                </div>
+                <div class="swiper-slide"> 
+                  <picture class="product-hero__pic">
+                    <source type="image/webp" srcset="img/slides/product-img-1.webp, img/slides/product-img-1@2x.webp 2x"><img src="img/slides/product-img-1.png" srcset="img/slides/product-img-1@2x.png 2x" width="597" height="724" alt="product on model photo">
+                  </picture>
+                </div>
+              </div>
+              <div class="swiper-button-prev product-hero__btn product-hero__btn--prev"></div>
+              <div class="swiper-button-next product-hero__btn product-hero__btn--next"></div>
+            </div>
+            <div class="container"> 
+              <div class="product-hero__content">
+                <div class="swiper product-hero__slider-text product-hero-slider-text">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"> 
+                      <div class="product-hero-slider-text__slide"><span class="product-hero__collection">1 Women Collection</span>
+                        <h2 class="title product-hero__title">1 Moschino cheap and chic</h2>
+                        <p class="text text--m product-hero__desc">1 Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals. Lorem ipsum dolor sit amet.</p>
+                        <div class="product-hero__price product-hero-price"><span class="product-hero-price__currency">&#36;&nbsp;</span><span class="product-hero-price__value">561</span></div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide"> 
+                      <div class="product-hero-slider-text__slide"><span class="product-hero__collection">2 Women Collection</span>
+                        <h2 class="title product-hero__title">2 Moschino cheap and chic</h2>
+                        <p class="text text--m product-hero__desc">2 Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals. Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                        <div class="product-hero__price product-hero-price"><span class="product-hero-price__currency">&#36;&nbsp;</span><span class="product-hero-price__value">562</span></div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide"> 
+                      <div class="product-hero-slider-text__slide"><span class="product-hero__collection">3 Women Collection</span>
+                        <h2 class="title product-hero__title">3 Moschino cheap and chic</h2>
+                        <p class="text text--m product-hero__desc">3 Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals. Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, aut.</p>
+                        <div class="product-hero__price product-hero-price"><span class="product-hero-price__currency">&#36;&nbsp;</span><span class="product-hero-price__value">563</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-hero__form product-hero-form" data-validate>
+                  <form class="product-hero-form__form">
+                    <div class="product-hero-form__fields"> 
+                      <div class="custom-select product-hero-form__field product-hero-form__field--color" data-select data-name="color" data-validate="select"><span class="custom-select__placeholder">Choose color</span>
+                        <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                        <ul class="custom-select__list" role="listbox">
+                          <li class="custom-select__item" tabindex="0" data-select-value="red" aria-selected="false" role="option">red</li>
+                          <li class="custom-select__item" tabindex="0" data-select-value="white" aria-selected="false" role="option">white</li>
+                          <li class="custom-select__item" tabindex="0" data-select-value="blue" aria-selected="false" role="option">blue</li>
+                          <li class="custom-select__item" tabindex="0" data-select-value="black" aria-selected="false" role="option">black</li>
+                        </ul>
+                      </div>
+                      <div class="custom-select product-hero-form__field product-hero-form__field--size" data-select data-name="size" data-validate="select"><span class="custom-select__placeholder">Choose size</span>
+                        <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                        <ul class="custom-select__list" role="listbox">
+                          <li class="custom-select__item" tabindex="0" data-select-value="xxs" aria-selected="false" role="option">xxs</li>
+                          <li class="custom-select__item" tabindex="0" data-select-value="xs" aria-selected="false" role="option">xs</li>
+                          <li class="custom-select__item" tabindex="0" data-select-value="s" aria-selected="false" role="option">s</li>
+                          <li class="custom-select__item" tabindex="0" data-select-value="m" aria-selected="false" role="option">m</li>
+                          <li class="custom-select__item" tabindex="0" data-select-value="l" aria-selected="false" role="option">l</li>
+                        </ul>
+                      </div>
+                      <div class="custom-select product-hero-form__field product-hero-form__field--quantity" data-select data-name="quantity" data-validate="select"><span class="custom-select__placeholder">Choose size</span>
+                        <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                        <ul class="custom-select__list" role="listbox">
+                          <li class="custom-select__item" tabindex="0" data-select-value="1" aria-selected="false" role="option">1</li>
+                          <li class="custom-select__item" tabindex="0" data-select-value="2" aria-selected="false" role="option">2</li>
+                          <li class="custom-select__item" tabindex="0" data-select-value="3" aria-selected="false" role="option">3</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="product-hero-form__actions">
+                      <button class="btn btn--empty product-hero-form__btn" type="submit"><span class="btn__icon">
+                          <svg class="icon no-transition" width="26" height="24" aria-hidden="true">
+                            <use xlink:href="./img/stack.svg#icon-cart"></use>
+                          </svg></span><span class="btn__text">Add to Cart</span></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cards card--product-page">
+            <div class="container"> 
+              <ul class="cards__list">
+                <li class="cards__item">
+                  <div class="cards__card card card--product-page">
+                    <div class="card__pic">
+                      <picture class="card__img">
+                        <source type="image/webp" srcset="img/content/card-img-1.webp, img/content/card-img-1@2x.webp 2x"><img src="img/content/card-img-1.jpg" srcset="img/content/card-img-1@2x.jpg 2x" width="360" height="420" alt="product image">
+                      </picture>
+                      <button class="card__add-to-card card-btn btn btn--empty"><span class="card-btn__icon">
+                          <svg class="icon" width="26" height="24" aria-hidden="true">
+                            <use xlink:href="./img/stack.svg#icon-cart"></use>
+                          </svg></span><span class="card-btn__text">Add to Cart</span></button>
+                    </div>
+                    <div class="card__desc">
+                      <h3 class="card__title title title--h4">Ellery x m'o capsule 1</h3>
+                      <p class="card__text text text--s">1 Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p><span class="card__price">$52.00</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="cards__item">
+                  <div class="cards__card card card--product-page">
+                    <div class="card__pic">
+                      <picture class="card__img">
+                        <source type="image/webp" srcset="img/content/card-img-2.webp, img/content/card-img-2@2x.webp 2x"><img src="img/content/card-img-2.jpg" srcset="img/content/card-img-2@2x.jpg 2x" width="360" height="420" alt="product image">
+                      </picture>
+                      <button class="card__add-to-card card-btn btn btn--empty"><span class="card-btn__icon">
+                          <svg class="icon" width="26" height="24" aria-hidden="true">
+                            <use xlink:href="./img/stack.svg#icon-cart"></use>
+                          </svg></span><span class="card-btn__text">Add to Cart</span></button>
+                    </div>
+                    <div class="card__desc">
+                      <h3 class="card__title title title--h4">Ellery x m'o capsule 2</h3>
+                      <p class="card__text text text--s">2 Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p><span class="card__price">$52.00</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="cards__item">
+                  <div class="cards__card card card--product-page">
+                    <div class="card__pic">
+                      <picture class="card__img">
+                        <source type="image/webp" srcset="img/content/card-img-3.webp, img/content/card-img-3@2x.webp 2x"><img src="img/content/card-img-3.jpg" srcset="img/content/card-img-3@2x.jpg 2x" width="360" height="420" alt="product image">
+                      </picture>
+                      <button class="card__add-to-card card-btn btn btn--empty"><span class="card-btn__icon">
+                          <svg class="icon" width="26" height="24" aria-hidden="true">
+                            <use xlink:href="./img/stack.svg#icon-cart"></use>
+                          </svg></span><span class="card-btn__text">Add to Cart</span></button>
+                    </div>
+                    <div class="card__desc">
+                      <h3 class="card__title title title--h4">Ellery x m'o capsule 3</h3>
+                      <p class="card__text text text--s">3 Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p><span class="card__price">$52.00</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer footer--product-page">
+        <div class="footer__top advantages">
+          <div class="container">
+            <ul class="advantages__list">
+              <li class="advantages__item"><span class="advantages__icon">
+                  <svg class="icon" width="45" height="32" aria-hidden="true">
+                    <use xlink:href="./img/stack.svg#icon-advantages-1"></use>
+                  </svg></span>
+                <h2 class="title footer__title advantages__title">Free Delivery</h2>
+                <p class="text advantages__text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+              </li>
+              <li class="advantages__item"><span class="advantages__icon">
+                  <svg class="icon" width="40" height="40" aria-hidden="true">
+                    <use xlink:href="./img/stack.svg#icon-advantages-2"></use>
+                  </svg></span>
+                <h2 class="title footer__title advantages__title">Sales &amp; discounts</h2>
+                <p class="text advantages__text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+              </li>
+              <li class="advantages__item"><span class="advantages__icon">
+                  <svg class="icon" width="48" height="35" aria-hidden="true">
+                    <use xlink:href="./img/stack.svg#icon-advantages-3"></use>
+                  </svg></span>
+                <h2 class="title footer__title advantages__title">Quality assurance</h2>
+                <p class="text advantages__text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__middle subscribe">
+          <div class="subscribe__bg subscribe-bg">
+            <picture class="bg-img">
+              <source type="image/webp" srcset="img/content/footer-bg.webp, img/content/footer-bg@2x.webp 2x"><img src="img/content/footer-bg.jpg" srcset="img/content/footer-bg@2x.jpg 2x" width="1600" height="448" alt="footer background image">
+            </picture>
+          </div>
+          <div class="container">
+            <div class="subscribe__cols">
+              <div class="subscribe__col subscribe__col--1">
+                <div class="review"><span class="review__avatar">
+                    <picture>
+                      <source type="image/webp" srcset="img/content/subscribe-photo.webp, img/content/subscribe-photo@2x.webp 2x"><img src="img/content/subscribe-photo.jpg" srcset="img/content/subscribe-photo@2x.jpg 2x" width="145" height="150" alt="Reviewer avatar">
+                    </picture></span>
+                  <h2 class="title footer__title review__title">“Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus condimentum“</h2>
+                </div>
+              </div>
+              <div class="subscribe__col subscribe__col--2">
+                <form class="subscribe__form subscribe-form" action="#"><span class="subscribe__title">Subscribe</span><span class="subscribe__subtitle">for our new letter and promotion</span>
+                  <div class="subscribe-form__field">
+                    <input class="subscribe-form__email" id="id-subscribe-email" type="email" name="subscribe-email" placeholder="Enter Your Email">
+                    <button class="btn btn--primary subscribe__btn" type="submit">Subscribe</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom footer-bottom">
+          <div class="container">
+            <div class="footer-bottom__row">
+              <div class="footer__copy">© 2023 Brand All Rights Reserved.</div>
+              <ul class="footer__social footer-social">
+                <li class="footer-social__item"><a class="footer-social__link" href="https://ru-ru.facebook.com/" target="_blank" rel="nofollow noopener noreferrer">
+                    <svg class="icon" width="9" height="15" aria-hidden="true">
+                      <use xlink:href="./img/stack.svg#icon-fb"></use>
+                    </svg></a></li>
+                <li class="footer-social__item"><a class="footer-social__link" href="https://www.instagram.com/" target="_blank" rel="nofollow noopener noreferrer">
+                    <svg class="icon" width="16" height="15" aria-hidden="true">
+                      <use xlink:href="./img/stack.svg#icon-ig"></use>
+                    </svg></a></li>
+                <li class="footer-social__item"><a class="footer-social__link" href="https://ru.pinterest.com/" target="_blank" rel="nofollow noopener noreferrer">
+                    <svg class="icon" width="13" height="16" aria-hidden="true">
+                      <use xlink:href="./img/stack.svg#icon-pinterest"></use>
+                    </svg></a></li>
+                <li class="footer-social__item"><a class="footer-social__link" href="https://twitter.com/" target="_blank" rel="nofollow noopener noreferrer">
+                    <svg class="icon" width="17" height="14" aria-hidden="true">
+                      <use xlink:href="./img/stack.svg#icon-twitter"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+mixin product-hero()
+	-
+		const data = {
+			slides: [
+				{
+					collection: "1 Women Collection",
+					title: "1 Moschino cheap and chic",
+					desc: "1 Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals. Lorem ipsum dolor sit amet.",
+					price: "561",
+				},
+				{
+					collection: "2 Women Collection",
+					title: "2 Moschino cheap and chic",
+					desc: "2 Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals. Lorem ipsum dolor sit amet, consectetur adipisicing.",
+					price: "562",
+				},
+				{
+					collection: "3 Women Collection",
+					title: "3 Moschino cheap and chic",
+					desc: "3 Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals. Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, aut.",
+					price: "563",
+				},
+			],
+			color: {
+				placeholder: "Choose color",
+				optionsList: [
+					{
+						value: "red",
+						text: "red",
+					},
+					{
+						value: "white",
+						text: "white",
+					},
+					{
+						value: "blue",
+						text: "blue",
+					},
+					{
+						value: "black",
+						text: "black",
+					},
+				],
+			},
+			size: {
+				placeholder: "Choose size",
+				optionsList: [
+					{
+						value: "xxs",
+						text: "xxs",
+					},
+					{
+						value: "xs",
+						text: "xs",
+					},
+					{
+						value: "s",
+						text: "s",
+					},
+					{
+						value: "m",
+						text: "m",
+					},
+					{
+						value: "l",
+						text: "l",
+					},
+				],
+			},
+			quantity: {
+				placeholder: "Choose size",
+				optionsList: [
+					{
+						value: 1,
+						text: "1",
+					},
+					{
+						value: 2,
+						text: "2",
+					},
+					{
+						value: 3,
+						text: "3",
+					},
+				],
+			},
+			btn: {
+				type: "submit",
+				icon: "icon-cart",
+				w: 26,
+				h: 24,
+				iconAttributes: {
+					class: "icon no-transition",
+				},
+				text: "Add to Cart",
+			},
+		}
+
+	.product-hero 
+		.swiper.product-hero__slider
+			.swiper-wrapper 
+				- for(i = 0; i < 3; i++)
+					.swiper-slide 
+						+picture("slides", "product-img-1", "png", 597, 724, "product on model photo").product-hero__pic
+			.swiper-button-prev.product-hero__btn.product-hero__btn--prev
+			.swiper-button-next.product-hero__btn.product-hero__btn--next
+		.container 
+			.product-hero__content
+				.swiper.product-hero__slider-text.product-hero-slider-text
+					.swiper-wrapper
+						each slide in data.slides
+							.swiper-slide 
+								.product-hero-slider-text__slide
+									span.product-hero__collection=slide.collection
+									h2.title.product-hero__title=slide.title 
+									p.text.text--m.product-hero__desc=slide.desc
+									.product-hero__price.product-hero-price
+										span.product-hero-price__currency &#36;&nbsp;
+										span.product-hero-price__value=slide.price
+				.product-hero__form.product-hero-form(data-validate)
+					form.product-hero-form__form
+						.product-hero-form__fields 
+							+custom-select(data.color)(data-select  data-name="color" data-validate="select").product-hero-form__field.product-hero-form__field--color
+							+custom-select(data.size)(data-select  data-name="size" data-validate="select").product-hero-form__field.product-hero-form__field--size
+							+custom-select(data.quantity)(data-select  data-name="quantity" data-validate="select").product-hero-form__field.product-hero-form__field--quantity
+						.product-hero-form__actions
+							+btn(data.btn).btn--empty.product-hero-form__btn

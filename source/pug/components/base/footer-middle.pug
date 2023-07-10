@@ -1,0 +1,29 @@
+mixin footer-middle()
+	-
+		const data = {
+			reviewTitle: "“Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus condimentum“",
+			formTitle: "Subscribe",
+			formSubtitle: "for our new letter and promotion",
+			btn: {
+				type: "submit",
+				text: "Subscribe",
+			}
+
+		}
+	.footer__middle.subscribe
+		.subscribe__bg.subscribe-bg
+			+picture("content", "footer-bg", "jpg", 1600, 448,  "footer background image").bg-img
+		.container
+			.subscribe__cols
+				.subscribe__col.subscribe__col--1
+					.review
+						span.review__avatar
+							+picture("content", "subscribe-photo", "jpg", 145, 150, "Reviewer avatar")
+						h2.title.footer__title.review__title=data.reviewTitle
+				.subscribe__col.subscribe__col--2
+					form.subscribe__form.subscribe-form(action="#")
+						span.subscribe__title=data.formTitle
+						span.subscribe__subtitle=data.formSubtitle
+						.subscribe-form__field
+							input.subscribe-form__email#id-subscribe-email(type="email" name="subscribe-email" placeholder="Enter Your Email")
+							+btn(data.btn).btn--primary.subscribe__btn

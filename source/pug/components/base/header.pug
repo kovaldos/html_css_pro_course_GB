@@ -1,36 +1,172 @@
 mixin header(headerMods, currentUrl)
   -
-    const headerLinks = [
-      {
-        href: "index.html",
-        text: "Главная"
-      },
-      {
-        href: "#",
-        text: "Страница 2"
-      },
-      {
-        href: "#",
-        text: "Страница 3"
-      },
-    ]
+    const data = {
+      headerBtns: [
+        {
+          tag: "button",
+          ariaLabel: "Переключатель отображения меню",
+          ariaPressed: "false",
+          burger: true,
+          icon: {
+            name: "icon-menu",
+            width: 32,
+            height: 23
+          },
+          burger: true
+        },
+        {
+          tag: "button",
+          ariaLabel: "Кнопка профиля пользователя",
+          ariaPressed: "false",
+          burger: false,
+          icon: {
+            name: "icon-user",
+            width: 29,
+            height: 29
+          }
+        },
+        {
+          tag: "button",
+          ariaLabel: "Кнопка перехода в корзину",
+          ariaPressed: "false",
+          burger: false,
+          icon: {
+            name: "icon-cart",
+            width: 32,
+            height: 29
+          },
+          classMod: "cart-btn-wrap"
+        },
+      ],
+      menuTitle: "Menu",
+      menu: [
+        {
+          title: "Man",
+          items: [
+            {
+              href: "/catalog/accessories",
+              text: "Accessories",
+            },
+            {
+              href: "/catalog/bags",
+              text: "Bags",
+            },
+            {
+              href: "/catalog/denim",
+              text: "Denim",
+            },
+            {
+              href: "/catalog/t-shirts",
+              text: "T-Shirts",
+            },
+          ],
+        },
+        {
+          title: "Woman",
+          items: [
+            {
+              href: "/catalog/accessories",
+              text: "Accessories",
+            },
+            {
+              href: "/catalog/jackets_and_coats",
+              text: "Jackets & Coats",
+            },
+            {
+              href: "/catalog/polos",
+              text: "Polos",
+            },
+            {
+              href: "/catalog/t_shirts",
+              text: "T-Shirts",
+            },
+            {
+              href: "/catalog/shirts",
+              text: "Shirts",
+            },
+          ],
+        },
+        {
+          title: "Kids",
+          items: [
+            {
+              href: "/catalog/accessories",
+              text: "Accessories",
+            },
+            {
+              href: "/catalog/jackets_and_coats",
+              text: "Jackets & Coats",
+            },
+            {
+              href: "/catalog/polos",
+              text: "Polos",
+            },
+            {
+              href: "/catalog/t_shirts",
+              text: "T-Shirts",
+            },
+            {
+              href: "/catalog/shirts",
+              text: "Shirts",
+            },
+            {
+              href: "/catalog/bags",
+              text: "Bags",
+            },
+          ],
+        },
+      ],
+    }
+
+  //- header.header(class=headerMods)
+  //-   .container
+  //-     nav.main-nav
+  //-       button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
+  //-         +icon("icon-burger", 20, 20)
+  //-       .main-nav__wrapper
+  //-         ul.main-nav__list
+  //-           each link in headerLinks
+  //-             - const activeState = currentUrl === link.href
+  //-             li.main-nav__item
+  //-               if(activeState)
+  //-                 span.main-nav__link.is-active= link.text
+  //-               else
+  //-                 a.main-nav__link(href=link.href)= link.text
 
   header.header(class=headerMods)
-    .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
+    .container.header__container
+      .header__cols
+        .header__col.header__col--1
+          if(currentUrl === "index.html")
+            //- lighthouse снимает 10 баллов SEO за <a> без href
+            span.header__logo
+              +picture("content", "logo", "png", 44, 38, "Main logo")
+          else
+            a.header__logo(href="index.html", aria-label="Переход на главную")
+              +picture("content", "logo", "png", 44, 38, "Main logo")
+          //  ToDo Форма поиска 
+          .header__search.header-search
+            button.header-search__btn.btn.btn--reset
+              +icon("icon-search", "27", "27").icon
+        .header__col.header__col--2
+          ul.header__btn-list
+            each item, idx in data.headerBtns
+              li.header__btn-list-item(class!=item.classMod)
+                button.header__btn.btn.btn--reset(type=item.tag, aria-label=item.ariaLabel, aria-pressed=item.ariaPressed data-burger-btn!=item.burger)
+                  +icon(item.icon.name, item.icon.width, item.icon.height).icon
+                if idx === data.headerBtns.length - 1
+                  span.cart-counter 5
+      .main-nav
+        .main-nav__overlay(data-burger-overlay)
+        nav.main-nav__wrapper(data-burger-body)
+          button.btn.btn--reset.main-nav__close
+            +icon("icon-close", 12, 12).icon
+          span.main-nav__title=data.menuTitle
           ul.main-nav__list
-            each link in headerLinks
-              - const activeState = currentUrl === link.href
+            each item in data.menu
               li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active= link.text
-                else
-                  a.main-nav__link(href=link.href)= link.text
+                a.link.main-nav__link(href="#")=item.title
+                ul.main-nav__sublist
+                  each el in item.items 
+                    li.main-nav__subitem 
+                      a.link.main-nav__sublink(href=el.href)=el.text

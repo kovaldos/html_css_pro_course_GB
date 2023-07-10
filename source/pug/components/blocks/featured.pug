@@ -1,0 +1,41 @@
+mixin featured()
+
+	-
+		const data = {
+			title: "Featured Items",
+			text: "Shop for items based on what we featured in this week",
+			card: {
+				img: "card-img-",
+				alt: "product image",
+				add: "Add to Cart",
+				title: "Ellery x m'o capsule",
+				desc: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+				price: "$52.00",
+			},
+			btn: {
+				href: "/catalog-page",
+				text: "Browse All Product"
+			}
+		}
+
+	section.featured
+		.container
+			.featured__heading
+				h2.featured__title.title.title--h2=data.title
+				p.featured__subtitle.text.text--s=data.text
+			ul.featured__list
+				- for (i = 0; i < 6; i++)
+					li.featured__item
+						.featured__card.card.card--home-page
+							.card__pic
+								+picture("content", data.card.img + (i + 1), "jpg", 360, 420, data.card.alt).card__img
+								button.card__add-to-card.card-btn.btn.btn--empty
+									span.card-btn__icon
+										+icon("icon-cart", 26, 24).icon
+									span.card-btn__text=data.card.add
+							.card__desc
+								h3.card__title.title.title--h4=data.card.title + " " + (i + 1)
+								p.card__text.text.text--s=(i + 1) + " " + data.card.desc
+								span.card__price=data.card.price
+			.featured__more
+				+btn(data.btn).btn--empty.featured__btn

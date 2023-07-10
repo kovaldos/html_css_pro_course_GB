@@ -1,13 +1,55 @@
 .header {
-  padding: 28px 0;
+  padding: 18px 0;
+  background-color: $color-nero;
+  min-height: $header_height;
 
-  background-color: $color-neon-blue;
-
-  .container {
+  &__cols,
+  &__col {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-whisper;
   }
 
   &__logo {
-    color: $color-default-white;
+    display: inline-block;
+    width: 44px;
+    height: 38px;
+    margin-right: $gutter * 5;
   }
+
+  &__search {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn-list {
+    display: flex;
+  }
+  &__btn-list-item:not(:last-of-type) {
+    margin-right: 23px;
+  }
+
+  &__btn {
+    padding: 5px;
+    width: 44px;
+    height: 33px;
+  }
+}
+
+.cart-btn-wrap {
+  position: relative;
+}
+
+.cart-counter {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background-color: $color-froly;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

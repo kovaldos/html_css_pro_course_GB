@@ -1,0 +1,19 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "BRAND" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = "product-page"
+  - const currentUrl = "product-page.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    section.product-page
+      +page-head("product-page")
+      +product-hero()
+      +cards("product-page")
+
+block modals
