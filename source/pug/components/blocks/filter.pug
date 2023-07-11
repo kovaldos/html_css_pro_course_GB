@@ -1,0 +1,157 @@
+mixin filter()
+	-
+		const data = {
+			btn: {
+				text: "Filter",
+				icon: "icon-filter",
+				w: 15,
+				h:10,
+				iconAttributes: {
+					class: "icon",
+				},
+			},
+			filter: [
+				{
+					btn: {
+						text: "Category",
+					},
+					items: [
+						"Accessories",
+						"Bags",
+						"Denim",
+						"Hoodies & Sweatshirts",
+						"Jackets & Coats",
+						"Polos",
+						"Shirts",
+						"Shoes",
+						"Sweaters & Knits",
+						"T-Shirts",
+						"Tanks",
+					],
+					classMod: "is-active",
+				},
+				{
+					btn: {
+						text: "Brand",
+					},
+					items: [
+						"Brand1",
+						"Brand2",
+						"Brand3",
+					],
+				},
+				{
+					btn: {
+						text: "Designer",
+					},
+					items: [
+						"Gucci",
+						"Prada",
+						"Moschino",
+						"Chanel",
+						"Benetton",
+						"Mango",
+					],
+				},
+			],
+			trending: {
+				placeholder: "Trending now",
+				optionsList: [
+					{
+						value: "option_1",
+						text: "option_1",
+					},
+					{
+						value: "option_2",
+						text: "option_2",
+					},
+					{
+						value: "option_3",
+						text: "option_3",
+					},
+					{
+						value: "option_4",
+						text: "option_4",
+					},
+				],
+			},
+			size: {
+				placeholder: "Size",
+				optionsList: [
+					{
+						value: "xs",
+						text: "xs",
+						inputLabel: "xs",
+						inputName: "size",
+					},
+					{
+						value: "s",
+						text: "s",
+						inputLabel: "s",
+						inputName: "size",
+					},
+					{
+						value: "m",
+						text: "m",
+						inputLabel: "m",
+						inputName: "size",
+					},
+					{
+						value: "l",
+						text: "l",
+						inputLabel: "l",
+						inputName: "size",
+					},
+				],
+			},
+			price: {
+				placeholder: "Price",
+				optionsList: [
+					{
+						value: "expensive",
+						text: "expensive",
+					},
+					{
+						value: "cheaper",
+						text: "cheaper",
+					},
+					{
+						value: "default",
+						text: "default",
+					},
+				],
+			},
+		}
+
+	.filter 
+		.container
+			.filter__row
+				.accordion.filter__acc.filter-acc(data-accordion="parent" data-single data-close-inner)
+					.accordion__element.filter-acc__element(data-accordion="element")
+						+btn(data.btn)(data-accordion="button").btn--reset.filter-acc__btn
+						.accordion__content.filter-acc__content(data-accordion="content")
+							.filter-acc__wrapper
+								.accordion.filter-acc__inner.filter-acc-inner(data-accordion="parent" data-single)
+									each el in data.filter
+										.accordion__element.filter-acc-inner__element(data-accordion="element" class!=el.classMod)
+											+btn(el.btn)(data-accordion="button").btn--reset.filter-acc-inner__btn
+											.accordion__content.filter-acc-inner__content(data-accordion="content")
+												.filter-acc-inner__wrapper
+													ul.filter-acc-inner__list 
+														each item in el.items
+															li.filter-acc-inner__item 
+																a.link.filter-acc-inner__link(href="#")=item
+				.filter__sort.filter-sort 
+					.filter-sort__form.filter-sort-form(data-validate)
+						form.filter-sort-form__form
+							+custom-select(data.trending)(data-select).filter-sort-form__field.filter-sort-form__field--trending
+							.custom-select(data-select data-multiple="true").filter-sort-form__field.filter-sort-form__field--size
+								span.custom-select__placeholder=data.size.placeholder
+								button.custom-select__button(type="button", aria-label=buttonAriaLabel)
+									span.custom-select__text
+									span.custom-select__icon
+								ul.custom-select__list(role="listbox")
+									each item in data.size.optionsList
+										li.custom-select__item(class=itemClass, tabindex="0", data-select-value=item.value, role="option")
+											+custom-toggle(item).custom-toggle--checkbox.filter-sort-form__toggle
+							+custom-select(data.price)(data-select).filter-sort-form__field.filter-sort-form__field--price

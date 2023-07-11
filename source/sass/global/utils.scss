@@ -86,4 +86,9 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  & img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+  }
 }

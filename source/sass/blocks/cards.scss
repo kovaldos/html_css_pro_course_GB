@@ -1,6 +1,10 @@
 .cards {
 	padding: 65px 0;
 
+	&--catalog-page {
+		padding: 0;
+	}
+
 	&__list {
 		display: grid;
 		grid-gap: 30px;

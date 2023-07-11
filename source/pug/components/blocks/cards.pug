@@ -13,19 +13,34 @@ mixin cards(mods)
 			}
 		}
 
-	.cards(class="card--" + mods)
+	.cards(class="cards--" + mods)
 		.container 
 			ul.cards__list
-				- for (i = 0; i < 3; i++)
-					li.cards__item
-						.cards__card.card.card--product-page
-							.card__pic
-								+picture("content", data.productPage.card.img + (i + 1), "jpg", 360, 420, data.productPage.card.alt).card__img
-								button.card__add-to-card.card-btn.btn.btn--empty
-									span.card-btn__icon
-										+icon("icon-cart", 26, 24).icon
-									span.card-btn__text=data.productPage.card.add
-							.card__desc
-								h3.card__title.title.title--h4=data.productPage.card.title + " " + (i + 1)
-								p.card__text.text.text--s=(i + 1) + " " + data.productPage.card.desc
-								span.card__price=data.productPage.card.price
+				if mods === "product-page"
+					- for (i = 0; i < 3; i++)
+						li.cards__item
+							.cards__card.card.card--product-page
+								.card__pic
+									+picture("content", data.productPage.card.img + (i + 1), "jpg", 360, 420, data.productPage.card.alt).card__img
+									button.card__add-to-card.card-btn.btn.btn--empty
+										span.card-btn__icon
+											+icon("icon-cart", 26, 24).icon
+										span.card-btn__text=data.productPage.card.add
+								.card__desc
+									h3.card__title.title.title--h4=data.productPage.card.title + " " + (i + 1)
+									p.card__text.text.text--s=(i + 1) + " " + data.productPage.card.desc
+									span.card__price=data.productPage.card.price
+				else if mods === "catalog-page"
+					- for (i = 0; i < 9; i++)
+						li.cards__item
+							.cards__card.card.card--product-page
+								.card__pic
+									+picture("content", data.productPage.card.img + (i + 1), "jpg", 360, 420, data.productPage.card.alt).card__img
+									button.card__add-to-card.card-btn.btn.btn--empty
+										span.card-btn__icon
+											+icon("icon-cart", 26, 24).icon
+										span.card-btn__text=data.productPage.card.add
+								.card__desc
+									h3.card__title.title.title--h4=data.productPage.card.title + " " + (i + 1)
+									p.card__text.text.text--s=(i + 1) + " " + data.productPage.card.desc
+									span.card__price=data.productPage.card.price
