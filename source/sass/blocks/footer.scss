@@ -34,7 +34,8 @@
     gap: 7px;
   }
 
-  &--product-page {
+  &--product-page,
+  &--cart-page {
     #{$self} {
       &__top {
         display: none;

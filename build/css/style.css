@@ -3681,7 +3681,7 @@ summary::-webkit-details-marker {
   display: flex;
   gap: 7px;
 }
-.footer--product-page .footer__top {
+.footer--product-page .footer__top, .footer--cart-page .footer__top {
   display: none;
 }
 
