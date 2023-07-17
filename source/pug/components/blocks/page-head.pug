@@ -30,6 +30,9 @@ mixin page-head(mods)
 						text: "catalog",
 					},
 				],
+			},
+			cartPage: {
+				title: "Shopping cart",
 			}
 		}
 
@@ -42,3 +45,6 @@ mixin page-head(mods)
 			else if mods === "catalog-page"
 				h1.title.title--h1.page-head__title=data.catalogPage.title
 				+breadcrumbs(data.catalogPage.breadcrumbs)
+
+			else if mods === "cart"
+				h1.title.title--h1.page-head__title=data.cartPage.title
