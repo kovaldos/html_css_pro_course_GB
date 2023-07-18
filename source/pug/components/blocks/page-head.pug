@@ -33,7 +33,10 @@ mixin page-head(mods)
 			},
 			cartPage: {
 				title: "Shopping cart",
-			}
+			},
+			regPage: {
+				title: "Registration",
+			},
 		}
 
 	.page-head(class="page-head--" + mods)
@@ -48,3 +51,6 @@ mixin page-head(mods)
 
 			else if mods === "cart"
 				h1.title.title--h1.page-head__title=data.cartPage.title
+
+			else if mods === "registration"
+				h1.title.title--h1.page-head__title=data.regPage.title

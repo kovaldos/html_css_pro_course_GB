@@ -144,3 +144,9 @@ summary {
     display: none;
   }
 }
+
+fieldset[class] {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
