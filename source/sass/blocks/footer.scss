@@ -35,7 +35,8 @@
   }
 
   &--product-page,
-  &--cart-page {
+  &--cart-page,
+  &--registration-page {
     #{$self} {
       &__top {
         display: none;

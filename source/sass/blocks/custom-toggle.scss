@@ -5,7 +5,8 @@
   font-weight: 300;
 
   display: flex;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   padding: 14px 0 10px 36px;
 
   @media screen and (max-width: 767px) {

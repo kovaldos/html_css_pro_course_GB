@@ -1,0 +1,82 @@
+mixin registration()
+	-
+		const data = {
+			form: {
+				title1: "Your Name",
+				name: {
+					inputName: "first_name",
+					inputPlaceholder: "First name",
+				},
+				lastName: {
+					inputName: "last_name",
+					inputPlaceholder: "Last name",
+				},
+				male: {
+					inputLabel: "Male",
+					inputType: "radio",
+					inputName: "gender",
+				},
+					
+				female: {
+					inputLabel: "Female",
+					inputType: "radio",
+					inputName: "gender",
+				},
+				title2: "Login details",
+				email: {
+					inputName: "Email",
+					inputPlaceholder: "Email",
+				},
+				password: {
+					inputName: "Password",
+					inputPlaceholder: "Password",
+				},
+				warning: "Please use 8 or more characters, with at least 1 number and a mixture of uppercase and lowercase letters",
+				submit: {
+					type: "submit",
+					text: "join now",
+					icon: "icon-arrow-right",
+					w: 17,
+					h: 10,
+					isIconRight: true,
+				},
+			},
+			desc: {
+				title: "Loyalty has it perks",
+				text: "Get in on the loyalty program where you can earn points and unlock serious perks. Starting with these as soon as you join:",
+				list: [
+					"15% off welcome offer",
+					"Free shipping, returns and exchanges on all orders",
+					"$10 off a purchase on your birthday",
+					"Early access to products",
+					"Exclusive offers &amp; rewards"
+				]
+			}
+		}
+	.registration 
+		.container 
+			.registration__wrapper
+				.registration__form.registration-form(data-validate)
+					form.registration-form__form
+						fieldset.registration-form__fieldset
+							legend.registration-form__title.registration-form__title--name=data.form.title1
+							+custom-input(data.form.name).registration-form__field
+							+custom-input(data.form.lastName).registration-form__field
+							.registration-form__row
+								+custom-toggle(data.form.male).registration-form__field.custom-toggle--radio
+								+custom-toggle(data.form.female).registration-form__field.custom-toggle--radio
+						fieldset.registration-form__fieldset
+							legend.registration-form__title.registration-form__title--login=data.form.title2
+							+custom-input(data.form.email).registration-form__field
+							+custom-input(data.form.password).registration-form__field
+							p.text.registration-form__warning=data.form.warning
+						+btn(data.form.submit).btn--primary.registration-form__submit
+				.registration__desc.registration-desc
+					h2.title.title--h1.registration-desc__title=data.desc.title
+					p.text.registration-desc__text=data.desc.text
+					ul.registration-desc__list
+						each item in data.desc.list
+							li.registration-desc__item
+								span.registration-desc__icon 
+									+icon("icon-check", 20, 26)
+								span.registration-desc__item-text=item

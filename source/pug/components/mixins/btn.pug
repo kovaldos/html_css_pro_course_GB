@@ -20,15 +20,21 @@ mixin btn(options = {})
 
   if hasIcon && hasText
     - const icon = options.icon;
+    - const isIconRight = options.isIconRight;
     - const width = options.w;
     - const height = options.h;
     - const iconAttributes = options.iconAttributes || {};
 
     #{tag}.btn(href=href, target=target, rel=rel, type=type)&attributes(attributes)
-      span.btn__icon
-        +icon(icon, width, height)&attributes(iconAttributes)
-      |
-      span.btn__text=text
+      if isIconRight
+        span.btn__text=text
+        span.btn__icon
+          +icon(icon, width, height).icon.no-transition
+      else 
+        span.btn__icon
+          +icon(icon, width, height).icon.no-transition
+        span.btn__text=text
+
   else if hasIcon
     - const icon = options.icon;
     - const width = options.w;
@@ -36,6 +42,6 @@ mixin btn(options = {})
     - const iconAttributes = options.iconAttributes || {};
 
     #{tag}.btn(href=href, target=target, rel=rel, type=type)&attributes(attributes)
-      +icon(icon, width, height)&attributes(iconAttributes)
+      +icon(icon, width, height).icon.no-transition
   else
     #{tag}.btn(href=href, target=target, rel=rel, type=type)&attributes(attributes)!=text

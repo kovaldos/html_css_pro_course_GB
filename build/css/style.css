@@ -1331,6 +1331,12 @@ summary::-webkit-details-marker {
   display: none;
 }
 
+fieldset[class] {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 .wrapper {
   position: relative;
   display: -webkit-box;
@@ -1663,6 +1669,7 @@ summary::-webkit-details-marker {
   line-height: 17px;
   border: 1px solid;
   border-radius: 4px;
+  text-transform: uppercase;
 }
 .btn--primary {
   color: #ffffff;
@@ -1848,7 +1855,8 @@ summary::-webkit-details-marker {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   padding: 14px 0 10px 36px;
 }
 @media screen and (max-width: 767px) {
@@ -3578,11 +3586,6 @@ summary::-webkit-details-marker {
   top: 75px;
 }
 
-.cart-order-form__fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
 .cart-order-form__title {
   color: #222222;
   font-size: 16px;
@@ -3651,6 +3654,148 @@ summary::-webkit-details-marker {
   margin-left: 24px;
 }
 
+.registration__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 24px;
+  padding: 65px 0;
+}
+.registration__desc {
+  max-width: 652px;
+}
+
+.registration-form {
+  max-width: 360px;
+}
+.registration-form__title {
+  color: #222222;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19px;
+}
+.registration-form__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 20px;
+}
+.registration-form__field {
+  margin-top: 20px;
+}
+.registration-form__field.custom-input label input {
+  border-radius: 0;
+  border-width: 1px;
+  border-color: #A4A4A4;
+}
+.registration-form__field.custom-input label input::-webkit-input-placeholder {
+  color: #A4A4A4;
+}
+.registration-form__field.custom-input label input::-moz-placeholder {
+  color: #A4A4A4;
+}
+.registration-form__field.custom-input label input:-ms-input-placeholder {
+  color: #A4A4A4;
+}
+.registration-form__field.custom-input label input::-ms-input-placeholder {
+  color: #A4A4A4;
+}
+.registration-form__field.custom-input label input::placeholder {
+  color: #A4A4A4;
+}
+.registration-form__field.custom-toggle {
+  padding: 0;
+  padding: 10px 0 30px;
+  color: #000000;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 13px;
+  width: auto;
+}
+.registration-form__field.custom-toggle--radio .custom-toggle__icon {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  border-width: 1px;
+  border-color: #A4A4A4;
+}
+.registration-form__field.custom-toggle--radio .custom-toggle__icon::before {
+  width: 10px;
+  height: 10px;
+}
+.registration-form__field.custom-toggle label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  padding: 2px 0;
+}
+.registration-form__field.custom-toggle input:checked + .custom-toggle__icon {
+  border-color: #f16d7f;
+}
+.registration-form__field.custom-toggle input:checked + .custom-toggle__icon::before {
+  background-color: #f16d7f;
+}
+.registration-form__warning {
+  color: #A4A4A4;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 16px;
+  margin-top: 16px;
+}
+.registration-form__submit {
+  margin-top: 40px;
+  border-radius: 0;
+}
+
+.registration-desc {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 300;
+}
+.registration-desc__title {
+  color: #000000;
+  font-weight: 300;
+}
+.registration-desc__text {
+  margin-top: 22px;
+}
+.registration-desc__list {
+  margin-top: 20px;
+}
+.registration-desc__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 24px;
+}
+.registration-desc__item:not(:first-child) {
+  margin-top: 16px;
+}
+.registration-desc__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .footer {
   padding: 35px 0 0;
 }
@@ -3681,7 +3826,7 @@ summary::-webkit-details-marker {
   display: flex;
   gap: 7px;
 }
-.footer--product-page .footer__top, .footer--cart-page .footer__top {
+.footer--product-page .footer__top, .footer--cart-page .footer__top, .footer--registration-page .footer__top {
   display: none;
 }
 
