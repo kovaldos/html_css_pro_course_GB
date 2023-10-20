@@ -2,9 +2,8 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: $gutter * 3;
   width: auto;
-  padding: 15px 36px;
+  padding: $gutter $gutter * 2;
   color: inherit;
   cursor: pointer;
   transition: opacity $trans-default, color $trans-default, background-color $trans-default, border-color $trans-default;
@@ -13,19 +12,22 @@
   line-height: 17px;
   border: 1px solid;
   border-radius: 4px;
-  text-transform: uppercase;
-  
+
+  @include vp-1024 {
+    gap: $gutter * 2;
+  }
+
   &--primary {
     color: $color-default-white;
     background-color: $color-froly;
     border-color: $color-froly;
-    
-    @include hover {      
+
+    @include hover {
       background-color: $color-default-white;
       color: $color-froly;
     }
   }
-  
+
   &--reset {
     background-color: $color-transparent;
     padding: 0;
@@ -33,12 +35,12 @@
     font-size: inherit;
     line-height: 1;
   }
-  
+
   &--empty {
     background-color: $color-transparent;
     border-color: $color-froly;
     color: $color-froly;
-    padding: 15px 40px;
+    padding: $gutter * 1.5 $gutter * 3;
     font-size: 16px;
     line-height: 19px;
     @include hover {
@@ -46,16 +48,35 @@
       color: $color-default-white;
     }
   }
-  
+
   &:disabled {
     opacity: 0.5;
-  
+
     pointer-events: none;
   }
 
   &__icon {
     display: inline-flex;
     color: inherit;
+    flex-shrink: 0;
+
+    &--right {
+      @include vp-1023 {
+        margin-left: $gutter * 1.5;
+      }
+    }
+
+    &--left {
+      margin-right: $gutter *1.5;
+    }
+  }
+
+  &__text {
+    flex-shrink: 0;
+
+    &--uppercase {
+      text-transform: uppercase;
+    }
   }
 }
 

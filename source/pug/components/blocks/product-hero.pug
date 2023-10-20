@@ -89,37 +89,34 @@ mixin product-hero()
 				icon: "icon-cart",
 				w: 26,
 				h: 24,
-				iconAttributes: {
-					class: "icon no-transition",
-				},
 				text: "Add to Cart",
 			},
 		}
 
-	.product-hero 
+	.product-hero
 		.swiper.product-hero__slider
-			.swiper-wrapper 
+			.swiper-wrapper
 				- for(i = 0; i < 3; i++)
-					.swiper-slide 
+					.swiper-slide
 						+picture("slides", "product-img-1", "png", 597, 724, "product on model photo").product-hero__pic
 			.swiper-button-prev.product-hero__btn.product-hero__btn--prev
 			.swiper-button-next.product-hero__btn.product-hero__btn--next
-		.container 
+		.container
 			.product-hero__content
 				.swiper.product-hero__slider-text.product-hero-slider-text
 					.swiper-wrapper
 						each slide in data.slides
-							.swiper-slide 
+							.swiper-slide
 								.product-hero-slider-text__slide
 									span.product-hero__collection=slide.collection
-									h2.title.product-hero__title=slide.title 
-									p.text.text--m.product-hero__desc=slide.desc
+									h2.title.product-hero__title=slide.title
+									p.text.text--s.product-hero__desc=slide.desc
 									.product-hero__price.product-hero-price
 										span.product-hero-price__currency &#36;&nbsp;
 										span.product-hero-price__value=slide.price
 				.product-hero__form.product-hero-form(data-validate)
 					form.product-hero-form__form
-						.product-hero-form__fields 
+						.product-hero-form__fields
 							+custom-select(data.color)(data-select  data-name="color" data-validate="select").product-hero-form__field.product-hero-form__field--color
 							+custom-select(data.size)(data-select  data-name="size" data-validate="select").product-hero-form__field.product-hero-form__field--size
 							+custom-select(data.quantity)(data-select  data-name="quantity" data-validate="select").product-hero-form__field.product-hero-form__field--quantity

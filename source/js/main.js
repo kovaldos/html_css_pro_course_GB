@@ -5,6 +5,7 @@ import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initProductPageSlider} from './modules/galleries/init-product-page-slider';
 import {initAccordions} from './modules/accordions/init-accordion';
+import {toggleBurgerMenu} from './toggle-burger-menu.js';
 
 // ---------------------------------
 
@@ -17,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Modules
   // ---------------------------------
-
+  toggleBurgerMenu();
   initProductPageSlider();
   initAccordions();
 

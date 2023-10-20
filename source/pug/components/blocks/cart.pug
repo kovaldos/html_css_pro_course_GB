@@ -1,143 +1,144 @@
 mixin cart()
-	-
-		const data = {
-			products: [
-				{
-					title: "Mango people t-shirt",
-					img: "card-img-1",
-					alt: title,
-					summary: [
-						{
-							prop: "price:",
-							value: "$300",
-							classMod: "cart-product-desc__value--colored",
-						},
-						{
-							prop: "color:",
-							value: "Red",
-						},
-						{
-							prop: "size:",
-							value: "xl",
-						},
-						{
-							prop: "quantity:",
-							value: 2,
-						},
-					],
-				},
-				{
-					title: "Mango people t-shirt 2",
-					img: "card-img-2",
-					alt: title,
-					summary: [
-						{
-							prop: "price",
-							value: "$350",
-							classMod: "cart-product-desc__value--colored",
-						},
-						{
-							prop: "color",
-							value: "Black",
-						},
-						{
-							prop: "size",
-							value: "xl",
-						},
-						{
-							prop: "quantity",
-							value: 1,
-						},
-					],
-				},
-			],
-			btn: {
-				icon: "icon-close",
-				w: 18,
-				h: 18,
-				iconAttributes: {
-					class: "icon",
-				},
-			},
-			actions: {
-				clear: {
-					text: "Clear shopping cart",
-				},
-				continue: {
-					href: "/catalog",
-					text: "Continue shopping",
-				}
-			},
-			form: {
-				legend: "Shipping address",
-				city: {
-					inputName: "city",
-					inputPlaceholder: "Bangladesh",
-				},
-				state: {
-					inputName: "state",
-					inputPlaceholder: "State",
-				},
-				postcode: {
-					inputName: "postcode",
-					inputPlaceholder: "postcode/zip",
-				},
-				btnQuote: {
-					text: "Get a quote",
-				},
-				order: {
-					subTotal: {
-						prop: "sub total",
-						value: "$900",
-					},
-					grandTotal: {
-						prop: "grand total",
-						value: "$900",
-					},
-					btn: {
-						type: "submit",
-						text: "Proceed to checkout"
-					}
-				}
-			}
-		}
-	.cart 
-		.container 
-			.cart__wrapper 
-				.cart__products.cart-products
-					ul.cart-products__list
-						each item in data.products
-							li.cart-products__item
-								a.cart__product.cart-product(href="#") 
-									+picture("content", item.img, "jpg", 262, 306, item.alt).cart-product__pic
-									.cart-product__desc.cart-product-desc
-										+btn(data.btn).btn--reset.cart-product__remove
-										h2.title.title--h1.cart-product__name=item.title
-										ul.cart-product-desc__summary
-											each el, idx in item.summary
-												li.cart-product-desc__item 
-													span.cart-product-desc__prop=el.prop
-													if idx !== item.summary.length - 1 
-														span.cart-product-desc__value(class!=el.classMod)=el.value
-													else 
-														input.cart-product-desc__quantity(type="number" name="cart-quantity" value=el.value)
-					.cart-products__actions
-						+btn(data.actions.clear).btn--empty.cart-products__btn.cart-products__btn--clear
-						+btn(data.actions.continue).btn--empty.cart-products__btn.cart-products__btn--continue
-				.cart__order.cart-order
-					.cart-order__form.cart-order-form(data-validate)
-						form.cart-order-form__form(action="#")
-							fieldset.cart-order-form__fieldset
-								legend.cart-order-form__title=data.form.legend
-								+custom-input(data.form.city).cart-order-form__field
-								+custom-input(data.form.state).cart-order-form__field
-								+custom-input(data.form.postcode).cart-order-form__field
-								+btn(data.form.btnQuote).btn--empty.cart-order-form__btn.cart-order-form__btn--quote
-								.cart-order-form__order 
-									.cart-order-form__sub-total.cart-order-form-sub-total
-										span.cart-order-form-sub-total__prop=data.form.order.subTotal.prop
-										span.cart-order-form-sub-total__value=data.form.order.subTotal.value
-									.cart-order-form__grand-total.cart-order-form-grand-total
-										span.cart-order-form-grand-total__prop=data.form.order.grandTotal.prop
-										span.cart-order-form-grand-total__value=data.form.order.grandTotal.value
-									+btn(data.form.order.btn).btn--primary.cart-order-form__submit
+  -
+    const data = {
+      products: [
+        {
+          title: "Mango people t-shirt",
+          img: "card-img-1",
+          alt: title,
+          summary: [
+            {
+              prop: "price:",
+              value: "$300",
+              classMod: "cart-product-desc__value--colored",
+            },
+            {
+              prop: "color:",
+              value: "Red",
+            },
+            {
+              prop: "size:",
+              value: "xl",
+            },
+            {
+              prop: "quantity:",
+              value: 2,
+            },
+          ],
+        },
+        {
+          title: "Mango people t-shirt 2",
+          img: "card-img-2",
+          alt: title,
+          summary: [
+            {
+              prop: "price",
+              value: "$350",
+              classMod: "cart-product-desc__value--colored",
+            },
+            {
+              prop: "color",
+              value: "Black",
+            },
+            {
+              prop: "size",
+              value: "xl",
+            },
+            {
+              prop: "quantity:",
+              value: 1,
+            },
+          ],
+        },
+      ],
+      btn: {
+        icon: "icon-close",
+        w: 18,
+        h: 18,
+        iconAttributes: {
+          class: "icon",
+        },
+      },
+      actions: {
+        clear: {
+          text: "Clear shopping cart",
+        },
+        continue: {
+          href: "/catalog",
+          text: "Continue shopping",
+        }
+      },
+      form: {
+        legend: "Shipping address",
+        city: {
+          inputName: "city",
+          inputPlaceholder: "Bangladesh",
+        },
+        state: {
+          inputName: "state",
+          inputPlaceholder: "State",
+        },
+        postcode: {
+          inputName: "postcode",
+          inputPlaceholder: "postcode/zip",
+        },
+        btnQuote: {
+          text: "Get a quote",
+        },
+        order: {
+          subTotal: {
+            prop: "sub total",
+            value: "$900",
+          },
+          grandTotal: {
+            prop: "grand total",
+            value: "$900",
+          },
+          btn: {
+            type: "submit",
+            text: "Proceed to checkout"
+          }
+        }
+      }
+    }
+  .cart
+    .container
+      .cart__wrapper
+        .cart__products.cart-products
+          ul.cart-products__list
+            each item in data.products
+              li.cart-products__item
+                a.cart__product.cart-product(href="#")
+                  +picture("content", item.img, "jpg", 262, 306, item.alt).cart-product__pic
+                  .cart-product__desc.cart-product-desc
+                    +btn(data.btn).btn--reset.cart-product__remove
+                    h2.title.title--h1.cart-product__name=item.title
+                    ul.cart-product-desc__summary
+                      each el, idx in item.summary
+                        li.cart-product-desc__item
+                          span.cart-product-desc__prop=el.prop
+                          if idx !== item.summary.length - 1
+                            span.cart-product-desc__value(class!=el.classMod)=el.value
+                          else
+                            input.cart-product-desc__quantity(type="number" name="cart-quantity" value=el.value)
+          .cart-products__actions
+            +btn(data.actions.clear).btn--empty.cart-products__btn.cart-products__btn--clear
+            +btn(data.actions.continue).btn--empty.cart-products__btn.cart-products__btn--continue
+        .cart__order.cart-order
+          .cart-order__form.cart-order-form(data-validate)
+            form.cart-order-form__form(action="#")
+              fieldset.cart-order-form__fieldset
+                .cart-order-form__fields
+                  legend.cart-order-form__title=data.form.legend
+                  +custom-input(data.form.city).cart-order-form__field
+                  +custom-input(data.form.state).cart-order-form__field
+                  +custom-input(data.form.postcode).cart-order-form__field
+                  +btn(data.form.btnQuote).btn--empty.cart-order-form__btn.cart-order-form__btn--quote
+                .cart-order-form__order
+                  .cart-order-form__sub-total.cart-order-form-sub-total
+                    span.cart-order-form-sub-total__prop=data.form.order.subTotal.prop
+                    span.cart-order-form-sub-total__value=data.form.order.subTotal.value
+                  .cart-order-form__grand-total.cart-order-form-grand-total
+                    span.cart-order-form-grand-total__prop=data.form.order.grandTotal.prop
+                    span.cart-order-form-grand-total__value=data.form.order.grandTotal.value
+                  +btn(data.form.order.btn).btn--primary.cart-order-form__submit

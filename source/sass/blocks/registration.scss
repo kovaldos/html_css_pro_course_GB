@@ -4,16 +4,31 @@
 		justify-content: space-between;
 		gap: $gutter * 3;
 		padding: 65px 0;
+    @include vp-767 {
+      flex-direction: column;
+      padding: 35px 0;
+    }
 	}
 
+  &__form {
+    flex-basis: 360px;
+    flex-grow: 0;
+    @include vp-1023 {
+      flex-grow: 1;
+      flex-basis: 50%;
+    }
+  }
+
 	&__desc {
-		max-width: 652px;
+    flex-basis: 652px;
+    @include vp-1023 {
+      flex-grow: 1;
+      flex-basis: 50%;
+    }
 	}
 }
 
 .registration-form {
-	max-width: 360px;
-
 	&__title {
 		color: $color-nero;
 		font-size: 16px;
@@ -99,9 +114,17 @@
 	font-size: 24px;
 	line-height: 29px;
 	font-weight: 300;
+  @include vp-1023 {
+    font-size: 16px;
+    line-height: 19px;
+  }
 	&__title {
 		color: $color-default-black;
 		font-weight: 300;
+    @include vp-1023 {
+      font-size: 16px;
+      line-height: 19px;
+    }
 	}
 
 	&__text {
@@ -115,7 +138,7 @@
 		display: flex;
 		align-items: center;
 		gap: $gutter * 3;
-		
+
 		&:not(:first-child) {
 			margin-top: $gutter * 2;
 		}

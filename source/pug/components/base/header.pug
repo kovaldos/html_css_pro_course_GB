@@ -144,7 +144,7 @@ mixin header(headerMods, currentUrl)
           else
             a.header__logo(href="index.html", aria-label="Переход на главную")
               +picture("content", "logo", "png", 44, 38, "Main logo")
-          //  ToDo Форма поиска 
+          //  ToDo Форма поиска
           .header__search.header-search
             button.header-search__btn.btn.btn--reset
               +icon("icon-search", "27", "27").icon
@@ -167,6 +167,6 @@ mixin header(headerMods, currentUrl)
               li.main-nav__item
                 a.link.main-nav__link(href="#")=item.title
                 ul.main-nav__sublist
-                  each el in item.items 
-                    li.main-nav__subitem 
+                  each el in item.items
+                    li.main-nav__subitem
                       a.link.main-nav__sublink(href=el.href)=el.text

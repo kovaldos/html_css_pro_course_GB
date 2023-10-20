@@ -1,13 +1,39 @@
 .cards {
+  $self: &;
+
 	padding: 65px 0;
 
-	&--catalog-page {
-		padding: 0;
-	}
+  @include vp-1023 {
+    padding: 120px 0 100px;
+  }
+
+  @include vp-767 {
+    padding-top: 64px;
+  }
+
 
 	&__list {
 		display: grid;
 		grid-gap: 30px;
 		grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+
+    @include vp-1023 {
+      grid-gap: $gutter * 2;
+    }
+	}
+
+
+  &--product-page {
+    #{$self}__item {
+      @include vp-1023 {
+        &:nth-child(n + 3) {
+          display: none;
+        }
+      }
+    }
+  }
+
+	&--catalog-page {
+		padding: 0;
 	}
 }

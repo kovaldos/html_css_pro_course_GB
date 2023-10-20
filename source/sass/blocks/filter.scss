@@ -4,6 +4,10 @@
 	&__row {
 		display: flex;
 		gap: 30px;
+    @include vp-767 {
+      position: relative;
+      padding-left: 50px;
+    }
 	}
 
 	&__acc {
@@ -12,6 +16,12 @@
 		min-height: 50px;
 		background-color: $color-default-white;
 		position: relative;
+    @include vp-1023 {
+      flex: none;
+      position: absolute;
+      left: 0;
+      width: 100%;
+    }
 	}
 
 	&__sort {
@@ -25,28 +35,36 @@
 	&__element {
 		position: absolute;
 		width: 100%;
-		z-index: 10;
 		background-color: $color-default-white;
 		transition: box-shadow $trans-default;
 
 		&.is-active {
+		  z-index: 10;
 			box-shadow: 6px 4px 35px rgba($color-default-black, 0.21);
-			#{$self} {
-				&__btn {
-					color: $color-froly;
-					transform: translateX($gutter * 2);
-				}
-			}
+      #{$self} {
+        &__btn {
+          color: $color-froly;
+          transform: translateX($gutter * 2);
+        }
+      }
 		}
 	}
 
 	&__btn {
 		padding: $gutter * 2;
 		margin-left: $gutter * -2;
-		flex-direction: row-reverse;
 		font-weight: 600;
-		text-transform: uppercase;
 		transition: transform $trans-default;
+    @include vp-767 {
+      & {
+        .btn__text {
+          display: none;
+        }
+        .btn__icon {
+          margin-left: 0;
+        }
+      }
+    }
 	}
 
 	&__wrapper {
@@ -106,6 +124,9 @@
 	&__form {
 		display: flex;
 		gap: 25px;
+    @include vp-1023 {
+      justify-content: flex-end;
+    }
 	}
 
 	&__field {
@@ -117,6 +138,10 @@
 		font-size: 14px;
 		line-height: 17px;
 		text-transform: uppercase;
+    @include vp-767 {
+      font-size: 12px;
+      line-height: 14px;
+    }
 
 		&--trending {
 			max-width: 132px;
@@ -143,6 +168,10 @@
 				line-height: 17px;
 				text-transform: uppercase;
 				color: $color-dim-gray;
+        @include vp-767 {
+          font-size: 12px;
+          line-height: 14px;
+        }
 			}
 			&__icon {
 				width: 10px;
@@ -150,6 +179,13 @@
 			}
 			&__list {
 				width: 130px;
+        @include vp-1023 {
+          right: 0;
+        }
+        @include vp-767 {
+          font-size: 12px;
+          line-height: 14px;
+        }
 			}
 		}
 	}
