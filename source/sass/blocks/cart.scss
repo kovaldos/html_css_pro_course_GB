@@ -4,17 +4,26 @@
 		gap: 30px;
 		justify-content: space-between;
 		padding: 95px 0;
+    @include vp-1023 {
+      padding: 60px 0;
+      flex-direction: column;
+      gap: 60px;
+    }
 	}
 	&__products {
-		flex-basis: 652px;
+		flex-grow: 1;
 	}
 	&__order {
+    flex-shrink: 0;
 		flex-basis: 360px;
 	}
 	&__product {
 		display: flex;
 		gap: $gutter;
 		box-shadow: 17px 18px 24px rgba($color-default-black, 0.13);
+    @include vp-767 {
+      gap: unset;
+    }
 	}
 }
 
@@ -30,6 +39,13 @@
 		justify-content: space-between;
 		gap: $gutter * 2;
 		margin-top: 70px;
+    @include vp-1023 {
+      justify-content: space-evenly;
+    }
+    @include vp-767 {
+      justify-content: space-between;
+      gap: $gutter;
+    }
 	}
 
 	&__btn {
@@ -40,6 +56,13 @@
 		line-height: 17px;
 		font-weight: 300;
 		border-radius: 0;
+    @include vp-767 {
+      padding: 9px 18px;
+      text-transform: initial;
+      font-size: 12px;
+      line-height: 14px;
+      flex-grow: 1;
+    }
 	}
 }
 
@@ -47,12 +70,24 @@
 	&__pic {
 		display: block;
 		flex: 1 0 262px;
+    @include vp-767 {
+      flex-basis: 144px;
+    }
+    @include vp-374 {
+      flex-basis: 45%;
+    }
+    img {
+      width: 100%;
+    }
 	}
 
 	&__desc {
 		flex: 1 1 100%;
 		padding: 22px 60px 22px 22px;
 		position: relative;
+    @include vp-767 {
+      padding: 14px 32px 14px 17px;
+    }
 	}
 
 	&__remove {
@@ -60,12 +95,30 @@
 		top: 6px;
 		right: 6px;
 		padding: $gutter * 2;
+    @include vp-767 {
+      padding: $gutter * 1.5;
+      top: 0;
+      right: 0;
+      & .icon {
+        width: 10px;
+        height: 11px;
+      }
+    }
 	}
 
 	&__name {
 		color: $color-nero;
 		max-width: 211px;
 		hyphens: none;
+    @include vp-767 {
+      max-width: 94%;
+      font-size: 16px;
+      line-height: 19px;
+    }
+    @include vp-374 {
+      font-size: 12px;
+      line-height: 14px;
+    }
 	}
 }
 
@@ -75,11 +128,24 @@
 		color: $color-matterhorn;
 		font-size: 22px;
 		line-height: 26px;
+    @include vp-767 {
+      margin-top: $gutter * 3;
+      font-size: 14px;
+      line-height: 17px;
+    }
+    @include vp-374 {
+      margin-top: 10px;
+      font-size: 12px;
+      line-height: 14px;
+    }
 	}
 
 	&__item {
 		&:not(:first-child) {
 			margin-top: 6px;
+      @include vp-767 {
+        margin-top: $gutter * 0.5;
+      }
 		}
 	}
 
@@ -101,14 +167,24 @@
 		border: 1px solid $color-whisper;
 		max-width: 44px;
 		text-align: center;
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 16px;
+    }
 	}
 }
 
 .cart-order {
 	padding-top: 15px;
+  @include vp-1023 {
+    padding-top: 0;
+  }
 	&__form {
 		position: sticky;
 		top: 75px;
+    @include vp-1023 {
+      position: initial;
+    }
 	}
 }
 
@@ -122,6 +198,23 @@
 		text-transform: uppercase;
 		margin-bottom: 20px;
 	}
+
+  &__fieldset {
+    @include vp-1023 {
+      display: flex;
+      gap: $gutter * 2;
+    }
+    @include vp-767 {
+      flex-direction: column;
+    }
+  }
+
+  &__fields,
+  &__order {
+    @include vp-1023 {
+      flex-grow: 1;
+    }
+  }
 
 	&__field {
 		&:not(:first-of-type) {
@@ -155,6 +248,12 @@
 		background-color: $color-white-smoke;
 		padding: 40px;
 		text-transform: uppercase;
+    @include vp-1023 {
+      margin-top: 39px;
+    }
+    @include vp-767 {
+      padding: 25px;
+    }
 	}
 
 	&__sub-total {

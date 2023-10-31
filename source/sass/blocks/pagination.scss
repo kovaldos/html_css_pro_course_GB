@@ -12,6 +12,9 @@
 		border: 1px solid $color-whisper;
 		border-radius: 4px;
 		color: $color-silver;
+    @include vp-767 {
+      gap: $gutter * 0.5
+    }
 	}
 	&__link {
 		display: flex;
