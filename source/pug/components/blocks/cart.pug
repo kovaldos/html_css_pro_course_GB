@@ -108,11 +108,11 @@ mixin cart()
           ul.cart-products__list
             each item in data.products
               li.cart-products__item
-                a.cart__product.cart-product(href="#")
+                .cart__product.cart-product
                   +picture("content", item.img, "jpg", 262, 306, item.alt).cart-product__pic
                   .cart-product__desc.cart-product-desc
                     +btn(data.btn).btn--reset.cart-product__remove
-                    h2.title.title--h1.cart-product__name=item.title
+                    a.title.title--h1.cart-product__name=item.title
                     ul.cart-product-desc__summary
                       each el, idx in item.summary
                         li.cart-product-desc__item
@@ -127,18 +127,17 @@ mixin cart()
         .cart__order.cart-order
           .cart-order__form.cart-order-form(data-validate)
             form.cart-order-form__form(action="#")
-              fieldset.cart-order-form__fieldset
-                .cart-order-form__fields
-                  legend.cart-order-form__title=data.form.legend
-                  +custom-input(data.form.city).cart-order-form__field
-                  +custom-input(data.form.state).cart-order-form__field
-                  +custom-input(data.form.postcode).cart-order-form__field
-                  +btn(data.form.btnQuote).btn--empty.cart-order-form__btn.cart-order-form__btn--quote
-                .cart-order-form__order
-                  .cart-order-form__sub-total.cart-order-form-sub-total
-                    span.cart-order-form-sub-total__prop=data.form.order.subTotal.prop
-                    span.cart-order-form-sub-total__value=data.form.order.subTotal.value
-                  .cart-order-form__grand-total.cart-order-form-grand-total
-                    span.cart-order-form-grand-total__prop=data.form.order.grandTotal.prop
-                    span.cart-order-form-grand-total__value=data.form.order.grandTotal.value
-                  +btn(data.form.order.btn).btn--primary.cart-order-form__submit
+              fieldset.cart-order-form__fieldset.cart-order-form__fieldset--fields
+                legend.cart-order-form__title=data.form.legend
+                +custom-input(data.form.city).cart-order-form__field
+                +custom-input(data.form.state).cart-order-form__field
+                +custom-input(data.form.postcode).cart-order-form__field
+                +btn(data.form.btnQuote).btn--empty.cart-order-form__btn.cart-order-form__btn--quote
+              fieldset.cart-order-form__fieldset.cart-order-form__fieldset--order
+                .cart-order-form__sub-total.cart-order-form-sub-total
+                  span.cart-order-form-sub-total__prop=data.form.order.subTotal.prop
+                  span.cart-order-form-sub-total__value=data.form.order.subTotal.value
+                .cart-order-form__grand-total.cart-order-form-grand-total
+                  span.cart-order-form-grand-total__prop=data.form.order.grandTotal.prop
+                  span.cart-order-form-grand-total__value=data.form.order.grandTotal.value
+                +btn(data.form.order.btn).btn--primary.cart-order-form__submit

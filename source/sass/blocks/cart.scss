@@ -109,7 +109,7 @@
 	&__name {
 		color: $color-nero;
 		max-width: 211px;
-		hyphens: none;
+		cursor: pointer;
     @include vp-767 {
       max-width: 94%;
       font-size: 16px;
@@ -199,7 +199,7 @@
 		margin-bottom: 20px;
 	}
 
-  &__fieldset {
+  &__form {
     @include vp-1023 {
       display: flex;
       gap: $gutter * 2;
@@ -209,8 +209,19 @@
     }
   }
 
-  &__fields,
-  &__order {
+  &__fieldset {
+    &--order {
+      margin-top: 60px;
+      background-color: $color-white-smoke;
+      padding: 40px;
+      text-transform: uppercase;
+      @include vp-1023 {
+        margin-top: 39px;
+      }
+      @include vp-767 {
+        padding: 25px;
+      }
+    }
     @include vp-1023 {
       flex-grow: 1;
     }
@@ -241,19 +252,6 @@
 		border-color: $color-dark-gray;
 		padding: 10px 15px;
 		margin-top: $gutter * 3;
-	}
-
-	&__order {
-		margin-top: 60px;
-		background-color: $color-white-smoke;
-		padding: 40px;
-		text-transform: uppercase;
-    @include vp-1023 {
-      margin-top: 39px;
-    }
-    @include vp-767 {
-      padding: 25px;
-    }
 	}
 
 	&__sub-total {
